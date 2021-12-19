@@ -388,14 +388,16 @@ window.addEventListener('DOMContentLoaded', () => {
 		dots[slideIndex - 1].style.opacity = '1';
 	}
 	function indexZero() {
-		slides.length < 10 ? current.textContent = `0${slideIndex}` : current.textContent = slideIndex;
+		current.textContent = slides.length < 10 ? `0${slideIndex}` : slideIndex;
+		// slides.length < 10 ? current.textContent = `0${slideIndex}` : current.textContent = slideIndex;
 	}
 	function onliDigit(e) {
 		return +e.replace(/\D/g, '');
 	}
 
 	indexZero();
-	slides.length < 10 ? total.textContent = `0${slides.length}` : total.textContent = slides.length;
+	// slides.length < 10 ? total.textContent = `0${slides.length}` : total.textContent = slides.length;
+	total.textContent = slides.length < 10 ? `0${slides.length}` : slides.length;
 
 	slidesFieled.style.width = 100 * slides.length + '%';
 	slidesFieled.style.display = 'flex';
@@ -448,7 +450,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 		slidesFieled.style.transform = `translateX(-${offset}px)`;
 
-		slideIndex == slides.length ? slideIndex = 1 : slideIndex++;
+		// slideIndex == slides.length ? slideIndex = 1 : slideIndex++;
+		slideIndex = slideIndex == slides.length ? 1 : slideIndex++;
 		indexZero();
 		datActive();
 	});
@@ -463,7 +466,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 		slidesFieled.style.transform = `translateX(-${offset}px)`;
 
-		slideIndex == 1 ? slideIndex = slides.length : slideIndex--;
+		// slideIndex == 1 ? slideIndex = slides.length : slideIndex--;
+		slideIndex = slideIndex == 1 ? slides.length : slideIndex--;
 		indexZero();
 		datActive();
 	});
@@ -593,9 +597,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 		input.addEventListener('input', () => {
 
-			input.value.match(/\D/g)
-				? input.style.border = '2px solid red'
-				: input.style.border = 'none';
+			input.style.border = input.value.match(/\D/g) ? '2px solid red'	: 'none';
 
 			// if (input.value.match(/\D/g)) {
 			// 	input.style.border = '2px solid red';
