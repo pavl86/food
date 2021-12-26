@@ -524,7 +524,7 @@ function slider() {
 		slidesFieled.style.transform = `translateX(-${offset}px)`;
 
 		// slideIndex == slides.length ? slideIndex = 1 : slideIndex++;
-		slideIndex = slideIndex == slides.length ? 1 : slideIndex++;
+		slideIndex = slideIndex == slides.length ? 1 : slideIndex + 1;
 		indexZero();
 		datActive();
 	});
@@ -540,7 +540,7 @@ function slider() {
 		slidesFieled.style.transform = `translateX(-${offset}px)`;
 
 		// slideIndex == 1 ? slideIndex = slides.length : slideIndex--;
-		slideIndex = slideIndex == 1 ? slides.length : slideIndex--;
+		slideIndex = slideIndex == 1 ? slides.length : slideIndex - 1;
 		indexZero();
 		datActive();
 	});
