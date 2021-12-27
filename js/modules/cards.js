@@ -1,3 +1,5 @@
+import {getResource} from '../services/services';
+
 function cards() {
     
 	// *** Классы для карточек ***
@@ -43,18 +45,6 @@ function cards() {
 		}
 	}
 
-	const getResource = async (url) => {
-		const res = await fetch(url);
-
-		if (!res.ok) {
-			 throw new Error(`Could not fech ${url}, status: ${res.status}`);
-			 // если будет 404 и т.д. fech() не воспримит как ошибку, поэтому прописваем вручную
-			 // если не будет интернета, ответа от сервера тогда сработает блок catch и все Ok
-		}
-
-		return await res.json();
-	};
-
 	// const div = new MenuCard();
 	// div.render();
 
@@ -92,4 +82,4 @@ function cards() {
 	// }
 }
 
-module.exports = cards;
+export default cards;

@@ -1,4 +1,4 @@
-function culc() {
+function calc() {
     
 	//	**	Calculator	**
 
@@ -109,4 +109,4 @@ function culc() {
 	getDynamicInformation('#age');
 }
 
-module.exports = culc;
+export default calc;
